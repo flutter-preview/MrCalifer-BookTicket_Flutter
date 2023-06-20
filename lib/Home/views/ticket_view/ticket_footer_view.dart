@@ -3,7 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 class TicketFooterView extends StatelessWidget {
-  const TicketFooterView({super.key});
+  final String date;
+  final String dedepartureTime;
+  final int number;
+  const TicketFooterView(
+      {Key? key,
+      required this.date,
+      required this.dedepartureTime,
+      required this.number})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +31,7 @@ class TicketFooterView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "1 MAY",
+                    date,
                     style: Styles.headLineStyle3.copyWith(color: Colors.white),
                   ),
                   const Gap(5),
@@ -37,7 +45,7 @@ class TicketFooterView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    "08:00 AM",
+                    dedepartureTime,
                     style: Styles.headLineStyle3.copyWith(color: Colors.white),
                   ),
                   const Gap(5),
@@ -51,7 +59,7 @@ class TicketFooterView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    "23",
+                    "$number",
                     style: Styles.headLineStyle3.copyWith(color: Colors.white),
                   ),
                   const Gap(5),

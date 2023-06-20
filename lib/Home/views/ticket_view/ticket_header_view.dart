@@ -4,7 +4,19 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 class TicketHeaderView extends StatelessWidget {
-  const TicketHeaderView({super.key});
+  final String fromCode;
+  final String fromName;
+  final String toCode;
+  final String toName;
+  final String flyingTime;
+  const TicketHeaderView(
+      {Key? key,
+      required this.fromCode,
+      required this.fromName,
+      required this.toCode,
+      required this.toName,
+      required this.flyingTime})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +32,7 @@ class TicketHeaderView extends StatelessWidget {
           Row(
             children: [
               Text(
-                "NYC",
+                fromCode,
                 style: Styles.headLineStyle3.copyWith(color: Colors.white),
               ),
               const Spacer(),
@@ -62,7 +74,7 @@ class TicketHeaderView extends StatelessWidget {
               const ThickContainer(),
               const Spacer(),
               Text(
-                "IND",
+                toCode,
                 style: Styles.headLineStyle3.copyWith(color: Colors.white),
               )
             ],
@@ -74,18 +86,18 @@ class TicketHeaderView extends StatelessWidget {
               SizedBox(
                 width: 100,
                 child: Text(
-                  "New-York",
+                  fromName,
                   style: Styles.headLineStyle4.copyWith(color: Colors.white),
                 ),
               ),
               Text(
-                "8H 30M",
+                flyingTime,
                 style: Styles.headLineStyle4.copyWith(color: Colors.white),
               ),
               SizedBox(
                 width: 100,
                 child: Text(
-                  "India",
+                  toName,
                   textAlign: TextAlign.end,
                   style: Styles.headLineStyle4.copyWith(color: Colors.white),
                 ),
