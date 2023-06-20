@@ -1,3 +1,6 @@
+import 'package:booktickets/Home/views/header_view/header_view.dart';
+import 'package:booktickets/Home/views/search_view/search_view.dart';
+import 'package:booktickets/Home/views/ticket_view/ticket_view.dart';
 import 'package:booktickets/Utils/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -16,33 +19,39 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               children: [
                 const Gap(40),
+                const HeaderView(),
+                const Gap(25),
+                const SearchBarView(),
+                const Gap(40),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Good Morning", style: Styles.headLineStyle3),
-                        const Gap(5),
-                        Text(
-                          "Book Tickets",
-                          style: Styles.headLineStyle1,
-                        )
-                      ],
+                    Text(
+                      "Upcoming Flights",
+                      style: Styles.headLineStyle2,
                     ),
-                    Container(
-                      width: 50,
-                      height: 50,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          image: const DecorationImage(
-                              fit: BoxFit.fitHeight,
-                              image: AssetImage("assest/images/img_1.png"))),
+                    InkWell(
+                      onTap: () {
+                        print("view all single tapped");
+                      },
+                      child: Text("View all",
+                          style: Styles.textStyle.copyWith(
+                            color: Styles.primaryColor,
+                          )),
                     )
                   ],
                 )
               ],
             ),
+          ),
+          const Gap(15),
+          const SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: EdgeInsets.only(left: 20),
+            child: Row(children: [
+              TicketView(),
+              TicketView(),
+            ]),
           )
         ],
       ),
