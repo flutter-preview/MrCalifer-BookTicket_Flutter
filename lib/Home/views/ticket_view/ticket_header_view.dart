@@ -1,3 +1,4 @@
+import 'package:booktickets/Utils/app_layout.dart';
 import 'package:booktickets/Utils/app_styles.dart';
 import 'package:booktickets/widgets/thick_container.dart';
 import 'package:flutter/material.dart';
@@ -21,12 +22,13 @@ class TicketHeaderView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-        color: Color(0xFF526799),
+      decoration: BoxDecoration(
+        color: const Color(0xFF526799),
         borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(21), topRight: Radius.circular(21)),
+            topLeft: Radius.circular(AppLayout.getHeight(21)),
+            topRight: Radius.circular(AppLayout.getHeight(21))),
       ),
-      padding: const EdgeInsets.all(16),
+      padding: EdgeInsets.all(AppLayout.getHeight(16)),
       child: Column(
         children: [
           Row(
@@ -41,7 +43,7 @@ class TicketHeaderView extends StatelessWidget {
                   child: Stack(
                 children: [
                   SizedBox(
-                    height: 24,
+                    height: AppLayout.getHeight(24),
                     child: LayoutBuilder(
                       builder: ((context, constraints) {
                         return Flex(
@@ -79,12 +81,12 @@ class TicketHeaderView extends StatelessWidget {
               )
             ],
           ),
-          const Gap(3),
+          Gap(AppLayout.getHeight(3)),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
-                width: 100,
+                width: AppLayout.getWidth(100),
                 child: Text(
                   fromName,
                   style: Styles.headLineStyle4.copyWith(color: Colors.white),
@@ -95,7 +97,7 @@ class TicketHeaderView extends StatelessWidget {
                 style: Styles.headLineStyle4.copyWith(color: Colors.white),
               ),
               SizedBox(
-                width: 100,
+                width: AppLayout.getWidth(100),
                 child: Text(
                   toName,
                   textAlign: TextAlign.end,

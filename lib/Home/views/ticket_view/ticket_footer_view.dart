@@ -1,3 +1,4 @@
+import 'package:booktickets/Utils/app_layout.dart';
 import 'package:booktickets/Utils/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -18,10 +19,15 @@ class TicketFooterView extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: Styles.orangeColor,
-        borderRadius: const BorderRadius.only(
-            bottomLeft: Radius.circular(21), bottomRight: Radius.circular(21)),
+        borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(AppLayout.getHeight(21)),
+            bottomRight: Radius.circular(AppLayout.getHeight(21))),
       ),
-      padding: const EdgeInsets.only(left: 16, top: 10, right: 16, bottom: 16),
+      padding: EdgeInsets.only(
+          left: AppLayout.getHeight(16),
+          top: AppLayout.getHeight(10),
+          right: AppLayout.getHeight(16),
+          bottom: AppLayout.getHeight(16)),
       child: Column(
         children: [
           Row(
@@ -34,7 +40,7 @@ class TicketFooterView extends StatelessWidget {
                     date,
                     style: Styles.headLineStyle3.copyWith(color: Colors.white),
                   ),
-                  const Gap(5),
+                  Gap(AppLayout.getHeight(5)),
                   Text(
                     "Date",
                     style: Styles.headLineStyle4.copyWith(color: Colors.white),
@@ -48,7 +54,7 @@ class TicketFooterView extends StatelessWidget {
                     dedepartureTime,
                     style: Styles.headLineStyle3.copyWith(color: Colors.white),
                   ),
-                  const Gap(5),
+                  Gap(AppLayout.getHeight(5)),
                   Text(
                     "Departure Time",
                     style: Styles.headLineStyle4.copyWith(color: Colors.white),
@@ -62,7 +68,7 @@ class TicketFooterView extends StatelessWidget {
                     "$number",
                     style: Styles.headLineStyle3.copyWith(color: Colors.white),
                   ),
-                  const Gap(5),
+                  Gap(AppLayout.getHeight(5)),
                   Text(
                     "Number",
                     style: Styles.headLineStyle4.copyWith(color: Colors.white),

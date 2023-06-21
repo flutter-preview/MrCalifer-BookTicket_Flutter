@@ -1,4 +1,5 @@
 import 'package:booktickets/Home/screen/home_screen.dart';
+import 'package:booktickets/Utils/app_layout.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -36,7 +37,7 @@ class _BottomBarState extends State<BottomBar> {
         unselectedItemColor: const Color(0xFF526480),
         elevation: 10,
         onTap: _onItemTap,
-        iconSize: 20,
+        iconSize: AppLayout.getHeight(20),
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(

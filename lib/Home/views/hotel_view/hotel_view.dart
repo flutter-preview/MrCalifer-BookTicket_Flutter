@@ -11,38 +11,43 @@ class HotelView extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = AppLayout.getSize(context);
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 17),
-      margin: const EdgeInsets.only(right: 17, top: 5),
+      padding: EdgeInsets.symmetric(
+          horizontal: AppLayout.getHeight(15),
+          vertical: AppLayout.getHeight(17)),
+      margin: EdgeInsets.only(
+          right: AppLayout.getHeight(17), top: AppLayout.getHeight(5)),
       decoration: BoxDecoration(
           color: Styles.primaryColor,
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(AppLayout.getHeight(24)),
           boxShadow: [
             BoxShadow(
-                color: Colors.grey.shade200, blurRadius: 20, spreadRadius: 5)
+                color: Colors.grey.shade200,
+                blurRadius: AppLayout.getHeight(20),
+                spreadRadius: AppLayout.getHeight(5))
           ]),
       width: size.width * 0.6, // 60% of the container width
-      height: 350,
+      height: AppLayout.getHeight(360),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Container(
-          height: 180,
+          height: AppLayout.getHeight(180),
           decoration: BoxDecoration(
               color: Styles.primaryColor,
-              borderRadius: BorderRadius.circular(12),
+              borderRadius: BorderRadius.circular(AppLayout.getHeight(12)),
               image: DecorationImage(
                   fit: BoxFit.fill,
                   image: AssetImage("assest/images/${hotel['image']}"))),
         ),
-        const Gap(10),
+        Gap(AppLayout.getHeight(10)),
         Text(
           hotel['place'],
           style: Styles.headLineStyle2.copyWith(color: Styles.kakiCOlor),
         ),
-        const Gap(5),
+        Gap(AppLayout.getHeight(5)),
         Text(
           hotel['destination'],
           style: Styles.headLineStyle3.copyWith(color: Colors.white),
         ),
-        const Gap(8),
+        Gap(AppLayout.getHeight(8)),
         Text(
           "\$${hotel['price']}/night",
           style: Styles.headLineStyle1.copyWith(color: Styles.kakiCOlor),

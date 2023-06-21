@@ -21,9 +21,9 @@ class TicketView extends StatelessWidget {
     final number = ticket['number'];
     return SizedBox(
       width: size.width * 0.85, // Use 85% of the screen width
-      height: 200,
+      height: AppLayout.getHeight(210),
       child: Container(
-        margin: const EdgeInsets.only(right: 16),
+        margin: EdgeInsets.only(right: AppLayout.getHeight(16)),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [

@@ -3,6 +3,7 @@ import 'package:booktickets/Home/views/hotel_view/hotel_view.dart';
 import 'package:booktickets/Home/views/search_view/search_view.dart';
 import 'package:booktickets/Home/views/ticket_view/ticket_view.dart';
 import 'package:booktickets/Utils/app_info_list.dart';
+import 'package:booktickets/Utils/app_layout.dart';
 import 'package:booktickets/Utils/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -17,19 +18,21 @@ class HomeScreen extends StatelessWidget {
       body: ListView(
         children: [
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            padding: EdgeInsets.symmetric(
+                horizontal: AppLayout.getHeight(20),
+                vertical: AppLayout.getHeight(10)),
             child: Column(
               children: [
                 //Header View
-                const Gap(40),
+                Gap(AppLayout.getHeight(40)),
                 const HeaderView(),
 
                 //Search Bar View
-                const Gap(25),
+                Gap(AppLayout.getHeight(25)),
                 const SearchBarView(),
 
                 // Upcoming Flight View
-                const Gap(40),
+                Gap(AppLayout.getHeight(40)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -50,7 +53,7 @@ class HomeScreen extends StatelessWidget {
                 ),
 
                 // Ticket List View
-                const Gap(15),
+                Gap(AppLayout.getHeight(15)),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -60,7 +63,7 @@ class HomeScreen extends StatelessWidget {
                 ),
 
                 //Hotel View
-                const Gap(15),
+                Gap(AppLayout.getHeight(15)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

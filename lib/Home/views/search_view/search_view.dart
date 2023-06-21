@@ -1,3 +1,4 @@
+import 'package:booktickets/Utils/app_layout.dart';
 import 'package:booktickets/Utils/app_styles.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
@@ -10,13 +11,13 @@ class SearchBarView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(AppLayout.getHeight(10)),
           color: const Color(0xFFF4F6FD)),
-      padding: const EdgeInsets.all(12),
+      padding: EdgeInsets.all(AppLayout.getHeight(12)),
       child: Row(children: [
         const Icon(FluentSystemIcons.ic_fluent_search_regular,
             color: Color(0xFFBFC205)),
-        const Gap(10),
+        Gap(AppLayout.getHeight(10)),
         Text("Search", style: Styles.headLineStyle4)
       ]),
     );
