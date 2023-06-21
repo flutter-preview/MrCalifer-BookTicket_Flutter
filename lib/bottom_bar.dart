@@ -29,7 +29,7 @@ class _BottomBarState extends State<BottomBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: _widgetOptions[_selectedIndex]),
+      body: SafeArea(child: Center(child: _widgetOptions[_selectedIndex])),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         showSelectedLabels: false,
