@@ -16,6 +16,7 @@ class DiscountOffersViews extends StatelessWidget {
         children: [
           const ViewAllSection(
               bigText: "Discounts & Offers", smallText: "View all"),
+          Gap(AppLayout.getHeight(20)),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
