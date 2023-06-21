@@ -24,7 +24,7 @@ class DiscountOffersViews extends StatelessWidget {
                */
               Container(
                 width: size.width * 0.42,
-                height: AppLayout.getHeight(400),
+                height: AppLayout.getHeight(415),
                 padding: EdgeInsets.symmetric(
                     horizontal: AppLayout.getHeight(8),
                     vertical: AppLayout.getHeight(8)),
@@ -68,7 +68,7 @@ class DiscountOffersViews extends StatelessWidget {
                     children: [
                       Container(
                         width: size.width * 0.44,
-                        height: AppLayout.getHeight(210),
+                        height: AppLayout.getHeight(220),
                         decoration: BoxDecoration(
                             color: const Color(0xFF3AB8B8),
                             borderRadius:
