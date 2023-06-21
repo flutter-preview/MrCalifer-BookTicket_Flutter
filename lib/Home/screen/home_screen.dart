@@ -5,6 +5,7 @@ import 'package:booktickets/Home/views/ticket_view/ticket_view.dart';
 import 'package:booktickets/Utils/app_info_list.dart';
 import 'package:booktickets/Utils/app_layout.dart';
 import 'package:booktickets/Utils/app_styles.dart';
+import 'package:booktickets/widgets/view_all.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -33,24 +34,8 @@ class HomeScreen extends StatelessWidget {
 
                 // Upcoming Flight View
                 Gap(AppLayout.getHeight(40)),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Upcoming Flights",
-                      style: Styles.headLineStyle2,
-                    ),
-                    InkWell(
-                      onTap: () {
-                        print("view all single tapped");
-                      },
-                      child: Text("View all",
-                          style: Styles.textStyle.copyWith(
-                            color: Styles.primaryColor,
-                          )),
-                    )
-                  ],
-                ),
+                const ViewAllSection(
+                    bigText: "Upcoming Flights", smallText: "View all"),
 
                 // Ticket List View
                 Gap(AppLayout.getHeight(15)),
@@ -64,25 +49,8 @@ class HomeScreen extends StatelessWidget {
 
                 //Hotel View
                 Gap(AppLayout.getHeight(15)),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Hotels",
-                      style: Styles.headLineStyle2,
-                    ),
-                    InkWell(
-                      onTap: () {
-                        print("view all single tapped");
-                      },
-                      child: Text("View all",
-                          style: Styles.textStyle.copyWith(
-                            color: Styles.primaryColor,
-                          )),
-                    )
-                  ],
-                ),
-
+                const ViewAllSection(bigText: "Hotels", smallText: "View all"),
+                Gap(AppLayout.getHeight(15)),
                 // Hotel List View
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
