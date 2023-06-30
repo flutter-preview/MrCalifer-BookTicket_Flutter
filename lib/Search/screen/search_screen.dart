@@ -3,6 +3,7 @@ import 'package:booktickets/Search/views/header_view.dart';
 import 'package:booktickets/Search/views/search_form_view.dart';
 import 'package:booktickets/Utils/app_layout.dart';
 import 'package:booktickets/Utils/app_styles.dart';
+import 'package:booktickets/Utils/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -15,14 +16,14 @@ class SearchScreen extends StatelessWidget {
       backgroundColor: Styles.backgroundColor,
       body: ListView(
         padding: EdgeInsets.symmetric(
-            horizontal: AppLayout.getWidth(20),
-            vertical: AppLayout.getHeight(20)),
+            horizontal: SizeConfig.safeBlockHorizontal! * 4,
+            vertical: SizeConfig.safeBlockVertical! * 4),
         children: [
-          Gap(AppLayout.getHeight(40)),
+          Gap(SizeConfig.safeBlockHorizontal! * 5),
           const HeaderView(),
-          Gap(AppLayout.getHeight(20)),
+          Gap(SizeConfig.safeBlockHorizontal! * 3),
           const SearchFormView(),
-          Gap(AppLayout.getHeight(40)),
+          Gap(SizeConfig.safeBlockHorizontal! * 5),
           const DiscountOffersViews(),
         ],
       ),

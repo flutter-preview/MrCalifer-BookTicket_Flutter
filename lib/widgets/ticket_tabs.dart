@@ -1,4 +1,4 @@
-import 'package:booktickets/Utils/app_layout.dart';
+import 'package:booktickets/Utils/size_config.dart';
 import 'package:flutter/material.dart';
 
 class TicketTabs extends StatelessWidget {
@@ -8,22 +8,21 @@ class TicketTabs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = AppLayout.getSize(context);
     return Container(
       padding: const EdgeInsets.all(3.5),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(AppLayout.getWidth(50)),
+          borderRadius: BorderRadius.circular(SizeConfig.safeBlockHorizontal! * 10),
           color: const Color(0xFFF4F6FD)),
       child: Row(children: [
         /**
         * Airline Ticket
         */
         Container(
-          width: size.width * 0.44,
-          padding: EdgeInsets.symmetric(vertical: AppLayout.getHeight(7)),
+          width: SizeConfig.safeBlockHorizontal! * 44,
+          padding: EdgeInsets.symmetric(vertical: SizeConfig.safeBlockHorizontal! * 2),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.horizontal(
-                  left: Radius.circular(AppLayout.getHeight(50))),
+                  left: Radius.circular(SizeConfig.safeBlockHorizontal! * 10)),
               color: Colors.white),
           child: Center(child: Text(firstTab)),
         ),
@@ -32,11 +31,11 @@ class TicketTabs extends StatelessWidget {
         * Hotels
         */
         Container(
-          width: size.width * 0.44,
-          padding: EdgeInsets.symmetric(vertical: AppLayout.getHeight(7)),
+          width: SizeConfig.safeBlockHorizontal! * 44,
+          padding: EdgeInsets.symmetric(vertical: SizeConfig.safeBlockHorizontal! * 2),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.horizontal(
-                  right: Radius.circular(AppLayout.getHeight(50))),
+                  right: Radius.circular(SizeConfig.safeBlockHorizontal! * 10)),
               color: Colors.transparent),
           child:Center(child: Text(secondTab)),
         ),

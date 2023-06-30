@@ -1,5 +1,6 @@
 import 'package:booktickets/Utils/app_layout.dart';
 import 'package:booktickets/Utils/app_styles.dart';
+import 'package:booktickets/Utils/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -15,7 +16,7 @@ class HeaderView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text("Good Morning", style: Styles.headLineStyle3),
-            Gap(AppLayout.getHeight(5)),
+            Gap(SizeConfig.safeBlockVertical! * 0.5),
             Text(
               "Book Tickets",
               style: Styles.headLineStyle1,
@@ -23,8 +24,8 @@ class HeaderView extends StatelessWidget {
           ],
         ),
         Container(
-          width: AppLayout.getWidth(50),
-          height: AppLayout.getHeight(50),
+          width: SizeConfig.safeBlockHorizontal! * 10,
+          height: SizeConfig.safeBlockVertical! * 5 ,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(AppLayout.getHeight(10)),
               image: const DecorationImage(

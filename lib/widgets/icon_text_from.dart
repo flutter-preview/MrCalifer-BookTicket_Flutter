@@ -1,5 +1,6 @@
 import 'package:booktickets/Utils/app_layout.dart';
 import 'package:booktickets/Utils/app_styles.dart';
+import 'package:booktickets/Utils/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -14,15 +15,15 @@ class IconTextForm extends StatelessWidget {
     final size = AppLayout.getSize(context);
     return Container(
       padding: EdgeInsets.symmetric(
-          vertical: AppLayout.getHeight(12),
-          horizontal: AppLayout.getWidth(12)),
+          vertical:SizeConfig.safeBlockVertical! * 2,
+          horizontal: SizeConfig.safeBlockHorizontal! * 3),
       width: size.width * 0.90,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(AppLayout.getWidth(10)),
+          borderRadius: BorderRadius.circular(SizeConfig.safeBlockHorizontal! * 4),
           color: Colors.white),
       child: Row(children: [
         Icon(icon, color: const Color(0xFFBFC2DF)),
-        Gap(AppLayout.getWidth(10)),
+        Gap(SizeConfig.safeBlockHorizontal! * 3),
         Text(
           text,
           style: Styles.textStyle,

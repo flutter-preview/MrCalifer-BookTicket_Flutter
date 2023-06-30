@@ -2,6 +2,7 @@ import 'package:booktickets/Home/views/ticket_view/ticket_view.dart';
 import 'package:booktickets/Utils/app_info_list.dart';
 import 'package:booktickets/Utils/app_layout.dart';
 import 'package:booktickets/Utils/app_styles.dart';
+import 'package:booktickets/Utils/size_config.dart';
 import 'package:booktickets/widgets/ticket_tabs.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -17,19 +18,20 @@ class TicketScreen extends StatelessWidget {
         children: [
           ListView(
             padding: EdgeInsets.symmetric(
-                horizontal: AppLayout.getWidth(20),
-                vertical: AppLayout.getHeight(20)),
+                horizontal: SizeConfig.safeBlockHorizontal! * 5,
+                vertical: SizeConfig.safeBlockVertical! * 5),
             children: [
-              Gap(AppLayout.getHeight(40)),
+              Gap(SizeConfig.safeBlockHorizontal! * 5),
               Text(
                 "Tickets",
                 style: Styles.headLineStyle1,
               ),
-              Gap(AppLayout.getHeight(20)),
+              Gap(SizeConfig.safeBlockHorizontal! * 5),
               const TicketTabs(firstTab: "Upcoming", secondTab: "Previous"),
-              Gap(AppLayout.getHeight(20)),
+              Gap(SizeConfig.safeBlockHorizontal! * 5),
               Container(
-                  padding: EdgeInsets.only(left: AppLayout.getHeight(15)),
+                  margin: EdgeInsets.only(
+                      left: SizeConfig.safeBlockHorizontal! * 5),
                   child: Column(
                     children: [
                       TicketView(
@@ -37,9 +39,8 @@ class TicketScreen extends StatelessWidget {
                         isColor: true,
                       ),
                       Container(
-                        margin: EdgeInsets.only(left: AppLayout.getWidth(3) , right: AppLayout.getWidth(19)),
-                        padding: EdgeInsets.symmetric(
-                            horizontal: AppLayout.getHeight(15)),
+                        margin: EdgeInsets.only(
+                            right: SizeConfig.safeBlockHorizontal! * 5),
                         color: Colors.white,
                         child: Column(
                           children: [
@@ -64,8 +65,7 @@ class TicketScreen extends StatelessWidget {
                         ),
                       )
                     ],
-                  )
-              ),
+                  )),
             ],
           ),
         ],

@@ -1,5 +1,6 @@
 import 'package:booktickets/Utils/app_layout.dart';
 import 'package:booktickets/Utils/app_styles.dart';
+import 'package:booktickets/Utils/size_config.dart';
 import 'package:booktickets/widgets/view_all.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -11,12 +12,12 @@ class DiscountOffersViews extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = AppLayout.getSize(context);
     return SizedBox(
-      width: size.width * 0.90,
+      width: SizeConfig.safeBlockHorizontal! * 90,
       child: Column(
         children: [
           const ViewAllSection(
               bigText: "Discounts & Offers", smallText: "View all"),
-          Gap(AppLayout.getHeight(20)),
+          Gap(SizeConfig.safeBlockHorizontal! * 5),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -24,11 +25,10 @@ class DiscountOffersViews extends StatelessWidget {
                * 1st Discount Card
                */
               Container(
-                width: size.width * 0.42,
-                height: AppLayout.getHeight(415),
+                width: SizeConfig.safeBlockHorizontal! * 42,
                 padding: EdgeInsets.symmetric(
-                    horizontal: AppLayout.getHeight(8),
-                    vertical: AppLayout.getHeight(8)),
+                    horizontal: SizeConfig.blockSizeHorizontal! * 2,
+                    vertical: SizeConfig.blockSizeHorizontal! * 2),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     boxShadow: [
@@ -38,20 +38,20 @@ class DiscountOffersViews extends StatelessWidget {
                           spreadRadius: 1)
                     ],
                     borderRadius:
-                        BorderRadius.circular(AppLayout.getHeight(20))),
+                        BorderRadius.circular(SizeConfig.blockSizeHorizontal! * 5)),
                 child: Column(
                   children: [
                     Container(
-                      height: AppLayout.getHeight(190),
+                      height: SizeConfig.blockSizeHorizontal! * 50,
                       decoration: BoxDecoration(
                           color: Colors.black,
                           borderRadius:
-                              BorderRadius.circular(AppLayout.getHeight(12)),
+                              BorderRadius.circular(SizeConfig.blockSizeHorizontal! * 3),
                           image: const DecorationImage(
                               fit: BoxFit.fill,
                               image: AssetImage("assest/images/sit.jpg"))),
                     ),
-                    Gap(AppLayout.getHeight(12)),
+                    Gap(SizeConfig.blockSizeHorizontal! * 3),
                     Text(
                       "20% discount on the early booking of this flight. Don't miss out this chance.",
                       style: Styles.headLineStyle2,
@@ -68,15 +68,15 @@ class DiscountOffersViews extends StatelessWidget {
                   Stack(
                     children: [
                       Container(
-                        width: size.width * 0.44,
-                        height: AppLayout.getHeight(220),
+                        width: SizeConfig.blockSizeHorizontal! * 44,
+                        height: SizeConfig.blockSizeVertical! * 30,
                         decoration: BoxDecoration(
                             color: const Color(0xFF3AB8B8),
                             borderRadius:
-                                BorderRadius.circular(AppLayout.getHeight(18))),
+                                BorderRadius.circular(SizeConfig.blockSizeHorizontal! * 5)),
                         padding: EdgeInsets.symmetric(
-                            vertical: AppLayout.getHeight(15),
-                            horizontal: AppLayout.getHeight(15)),
+                            vertical: SizeConfig.blockSizeHorizontal! * 5,
+                            horizontal: SizeConfig.blockSizeHorizontal! * 3),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -86,7 +86,7 @@ class DiscountOffersViews extends StatelessWidget {
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white),
                             ),
-                            Gap(AppLayout.getHeight(10)),
+                            Gap(SizeConfig.blockSizeHorizontal! * 3),
                             Text(
                               "Take the survey about our services and get discount",
                               style: Styles.headLineStyle2.copyWith(
@@ -101,7 +101,7 @@ class DiscountOffersViews extends StatelessWidget {
                           right: -45,
                           top: -40,
                           child: Container(
-                            padding: EdgeInsets.all(AppLayout.getHeight(30)),
+                            padding: EdgeInsets.all(SizeConfig.blockSizeHorizontal! * 7),
                             decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 border: Border.all(
@@ -110,20 +110,20 @@ class DiscountOffersViews extends StatelessWidget {
                           ))
                     ],
                   ),
-                  Gap(AppLayout.getHeight(15)),
+                  Gap(SizeConfig.blockSizeHorizontal! * 5),
                   /**
                    * 3rd Discount Card
                    */
                   Container(
-                    width: size.width * 0.44,
-                    height: AppLayout.getHeight(170),
+                    width: SizeConfig.blockSizeHorizontal! * 44,
+                    height: SizeConfig.blockSizeHorizontal! * 40,
                     padding: EdgeInsets.symmetric(
-                        vertical: AppLayout.getHeight(15),
-                        horizontal: AppLayout.getHeight(15)),
+                        vertical: SizeConfig.blockSizeVertical! * 3,
+                        horizontal: SizeConfig.blockSizeHorizontal! * 3),
                     decoration: BoxDecoration(
                         color: const Color(0xFFEC6545),
                         borderRadius:
-                            BorderRadius.circular(AppLayout.getHeight(18))),
+                            BorderRadius.circular(SizeConfig.blockSizeHorizontal! * 4)),
                     child: Column(
                       children: [
                         Text(
@@ -132,7 +132,7 @@ class DiscountOffersViews extends StatelessWidget {
                               color: Colors.white, fontWeight: FontWeight.bold),
                           textAlign: TextAlign.center,
                         ),
-                        Gap(AppLayout.getHeight(5)),
+                        Gap(SizeConfig.blockSizeHorizontal! * 3),
                         RichText(
                             text: const TextSpan(children: [
                           TextSpan(text: '😍', style: TextStyle(fontSize: 30)),

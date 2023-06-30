@@ -3,7 +3,6 @@ import 'package:booktickets/Home/views/hotel_view/hotel_view.dart';
 import 'package:booktickets/Home/views/search_view/search_view.dart';
 import 'package:booktickets/Home/views/ticket_view/ticket_view.dart';
 import 'package:booktickets/Utils/app_info_list.dart';
-import 'package:booktickets/Utils/app_layout.dart';
 import 'package:booktickets/Utils/app_styles.dart';
 import 'package:booktickets/Utils/size_config.dart';
 import 'package:booktickets/widgets/view_all.dart';
