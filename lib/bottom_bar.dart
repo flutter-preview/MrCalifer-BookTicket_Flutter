@@ -1,6 +1,8 @@
 import 'package:booktickets/Home/screen/home_screen.dart';
 import 'package:booktickets/Search/screen/search_screen.dart';
+import 'package:booktickets/Ticket/ticket_screen.dart';
 import 'package:booktickets/Utils/app_layout.dart';
+import 'package:booktickets/Utils/size_config.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +18,7 @@ class _BottomBarState extends State<BottomBar> {
   static final List<Widget> _widgetOptions = <Widget>[
     const HomeScreen(),
     const SearchScreen(),
-    const Text("Tickets"),
+    const TicketScreen(),
     const Text("Profile")
   ];
 
@@ -28,6 +30,7 @@ class _BottomBarState extends State<BottomBar> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       body: SafeArea(child: Center(child: _widgetOptions[_selectedIndex])),
       bottomNavigationBar: BottomNavigationBar(

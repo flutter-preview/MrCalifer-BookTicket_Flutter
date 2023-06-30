@@ -1,5 +1,5 @@
-import 'package:booktickets/Utils/app_layout.dart';
 import 'package:booktickets/Utils/app_styles.dart';
+import 'package:booktickets/Utils/size_config.dart';
 import 'package:booktickets/widgets/thick_container.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -10,40 +10,46 @@ class TicketHeaderView extends StatelessWidget {
   final String toCode;
   final String toName;
   final String flyingTime;
+  final bool? isColor;
   const TicketHeaderView(
       {Key? key,
       required this.fromCode,
       required this.fromName,
       required this.toCode,
       required this.toName,
-      required this.flyingTime})
+      required this.flyingTime,
+      this.isColor})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF526799),
+        color: isColor == null ? const Color(0xFF526799) : Colors.white,
         borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(AppLayout.getHeight(21)),
-            topRight: Radius.circular(AppLayout.getHeight(21))),
+            topLeft: Radius.circular(SizeConfig.safeBlockHorizontal! * 5),
+            topRight: Radius.circular(SizeConfig.safeBlockHorizontal! * 5)),
       ),
-      padding: EdgeInsets.all(AppLayout.getHeight(16)),
+      padding: EdgeInsets.all(SizeConfig.blockSizeHorizontal! * 3),
       child: Column(
         children: [
           Row(
             children: [
               Text(
                 fromCode,
-                style: Styles.headLineStyle3.copyWith(color: Colors.white),
+                style: isColor == null
+                    ? Styles.headLineStyle3.copyWith(color: Colors.white)
+                    : Styles.headLineStyle3,
               ),
               const Spacer(),
-              const ThickContainer(),
+              ThickContainer(
+                isColor: isColor,
+              ),
               Expanded(
                   child: Stack(
                 children: [
                   SizedBox(
-                    height: AppLayout.getHeight(24),
+                    height: SizeConfig.safeBlockVertical! * 3.8,
                     child: LayoutBuilder(
                       builder: ((context, constraints) {
                         return Flex(
@@ -51,57 +57,71 @@ class TicketHeaderView extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             mainAxisSize: MainAxisSize.max,
                             children: List.generate(
-                                (constraints.constrainWidth() / 6).floor(),
-                                (index) => const SizedBox(
+                                (constraints.constrainWidth() / 8).floor(),
+                                (index) => SizedBox(
                                       width: 3,
                                       height: 1,
                                       child: DecoratedBox(
                                           decoration: BoxDecoration(
-                                              color: Colors.white)),
+                                              color: isColor == null
+                                                  ? Colors.white
+                                                  : Colors.grey.shade300)),
                                     )));
                       }),
                     ),
                   ),
                   Center(
                     child: Transform.rotate(
-                      angle: 1.5,
-                      child: const Icon(
+                      angle: 1.55,
+                      child: Icon(
                         Icons.local_airport_rounded,
-                        color: Colors.white,
+                        color: isColor == null
+                            ? Colors.white
+                            : const Color(0xFF8ACCF4),
                       ),
                     ),
                   )
                 ],
               )),
-              const ThickContainer(),
+              ThickContainer(
+                isColor: isColor,
+              ),
               const Spacer(),
               Text(
                 toCode,
-                style: Styles.headLineStyle3.copyWith(color: Colors.white),
+                style: isColor == null
+                    ? Styles.headLineStyle3.copyWith(color: Colors.white)
+                    : Styles.headLineStyle3,
               )
             ],
           ),
-          Gap(AppLayout.getHeight(3)),
+          Gap(SizeConfig.safeBlockVertical! * 0.5),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
-                width: AppLayout.getWidth(100),
+                width: SizeConfig.safeBlockHorizontal! * 20,
                 child: Text(
                   fromName,
-                  style: Styles.headLineStyle4.copyWith(color: Colors.white),
+                  style: isColor == null
+                      ? Styles.headLineStyle4.copyWith(color: Colors.white)
+                      : Styles.headLineStyle4,
                 ),
               ),
               Text(
                 flyingTime,
-                style: Styles.headLineStyle4.copyWith(color: Colors.white),
+                style: isColor == null
+                    ? Styles.headLineStyle4.copyWith(color: Colors.white)
+                    : Styles.headLineStyle4.copyWith(color: Colors.black87),
               ),
               SizedBox(
-                width: AppLayout.getWidth(100),
+                width: SizeConfig.safeBlockHorizontal! * 20,
                 child: Text(
                   toName,
                   textAlign: TextAlign.end,
-                  style: Styles.headLineStyle4.copyWith(color: Colors.white),
+                  style: isColor == null
+                      ? Styles.headLineStyle4.copyWith(color: Colors.white)
+                      : Styles.headLineStyle4,
                 ),
               ),
             ],

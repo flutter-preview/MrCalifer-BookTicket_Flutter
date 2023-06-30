@@ -5,6 +5,7 @@ import 'package:booktickets/Home/views/ticket_view/ticket_view.dart';
 import 'package:booktickets/Utils/app_info_list.dart';
 import 'package:booktickets/Utils/app_layout.dart';
 import 'package:booktickets/Utils/app_styles.dart';
+import 'package:booktickets/Utils/size_config.dart';
 import 'package:booktickets/widgets/view_all.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -20,25 +21,25 @@ class HomeScreen extends StatelessWidget {
         children: [
           Container(
             padding: EdgeInsets.symmetric(
-                horizontal: AppLayout.getHeight(20),
-                vertical: AppLayout.getHeight(10)),
+                horizontal: SizeConfig.safeBlockHorizontal! * 5,
+                vertical: SizeConfig.safeBlockVertical! * 1),
             child: Column(
               children: [
                 //Header View
-                Gap(AppLayout.getHeight(40)),
+                Gap(SizeConfig.safeBlockVertical! * 5),
                 const HeaderView(),
 
                 //Search Bar View
-                Gap(AppLayout.getHeight(25)),
+                Gap(SizeConfig.safeBlockVertical! * 3),
                 const SearchBarView(),
 
                 // Upcoming Flight View
-                Gap(AppLayout.getHeight(40)),
+                Gap(SizeConfig.safeBlockVertical! * 5),
                 const ViewAllSection(
                     bigText: "Upcoming Flights", smallText: "View all"),
 
                 // Ticket List View
-                Gap(AppLayout.getHeight(15)),
+                Gap(SizeConfig.safeBlockVertical! * 3),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -48,9 +49,9 @@ class HomeScreen extends StatelessWidget {
                 ),
 
                 //Hotel View
-                Gap(AppLayout.getHeight(15)),
+                Gap(SizeConfig.safeBlockVertical! * 5),
                 const ViewAllSection(bigText: "Hotels", smallText: "View all"),
-                Gap(AppLayout.getHeight(15)),
+                Gap(SizeConfig.safeBlockVertical! * 3),
                 // Hotel List View
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,

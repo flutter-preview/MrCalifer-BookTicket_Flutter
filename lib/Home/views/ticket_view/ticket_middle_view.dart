@@ -1,31 +1,35 @@
-import 'package:booktickets/Utils/app_layout.dart';
 import 'package:booktickets/Utils/app_styles.dart';
+import 'package:booktickets/Utils/size_config.dart';
 import 'package:flutter/material.dart';
 
 class TicketMiddleView extends StatelessWidget {
-  const TicketMiddleView({super.key});
+  final bool? isColor;
+  const TicketMiddleView({Key? key, this.isColor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     /**Showing ticket view middle segment */
     return Container(
-      color: Styles.orangeColor,
+      color: isColor == null ? Styles.orangeColor : Colors.white,
       child: Row(
         children: [
           SizedBox(
-            height: AppLayout.getHeight(20),
-            width: AppLayout.getWidth(10),
+            height: SizeConfig.safeBlockVertical! * 2,
+            width: SizeConfig.safeBlockHorizontal! * 2,
             child: DecoratedBox(
                 decoration: BoxDecoration(
-                    color: const Color(0xFFeeedf2),
+                    color: isColor == null
+                        ? const Color(0xFFeeedf2)
+                        : Colors.white,
                     borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(AppLayout.getHeight(10)),
-                        bottomRight:
-                            Radius.circular(AppLayout.getHeight(10))))),
+                        topRight:
+                            Radius.circular(SizeConfig.safeBlockVertical! * 5),
+                        bottomRight: Radius.circular(
+                            SizeConfig.safeBlockVertical! * 5)))),
           ),
           Expanded(
               child: Padding(
-            padding: EdgeInsets.all(AppLayout.getHeight(12)),
+            padding: EdgeInsets.all(SizeConfig.safeBlockVertical! * 1.5),
             child: LayoutBuilder(
               builder: ((context, constraints) {
                 return Flex(
@@ -34,25 +38,32 @@ class TicketMiddleView extends StatelessWidget {
                   mainAxisSize: MainAxisSize.max,
                   children: List.generate(
                       (constraints.constrainWidth() / 15).floor(),
-                      (index) => const SizedBox(
-                            width: 5,
+                      (index) => SizedBox(
+                            width: 3,
                             height: 1,
                             child: DecoratedBox(
-                                decoration: BoxDecoration(color: Colors.white)),
+                                decoration: BoxDecoration(
+                                    color: isColor == null
+                                        ? Colors.white
+                                        : Colors.grey.shade300)),
                           )),
                 );
               }),
             ),
           )),
           SizedBox(
-            height: AppLayout.getHeight(20),
-            width: AppLayout.getWidth(10),
+            height: SizeConfig.safeBlockVertical! * 2,
+            width: SizeConfig.safeBlockHorizontal! * 2,
             child: DecoratedBox(
                 decoration: BoxDecoration(
-                    color: const Color(0xFFeeedf2),
+                    color: isColor == null
+                        ? const Color(0xFFeeedf2)
+                        : Colors.white,
                     borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(AppLayout.getHeight(10)),
-                        bottomLeft: Radius.circular(AppLayout.getHeight(10))))),
+                        topLeft:
+                            Radius.circular(SizeConfig.safeBlockVertical! * 5),
+                        bottomLeft: Radius.circular(
+                            SizeConfig.safeBlockVertical! * 5)))),
           ),
         ],
       ),
