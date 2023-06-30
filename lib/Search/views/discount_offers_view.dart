@@ -1,4 +1,3 @@
-import 'package:booktickets/Utils/app_layout.dart';
 import 'package:booktickets/Utils/app_styles.dart';
 import 'package:booktickets/Utils/size_config.dart';
 import 'package:booktickets/widgets/view_all.dart';
@@ -10,7 +9,6 @@ class DiscountOffersViews extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = AppLayout.getSize(context);
     return SizedBox(
       width: SizeConfig.safeBlockHorizontal! * 90,
       child: Column(

@@ -1,7 +1,6 @@
 import 'package:booktickets/Search/views/discount_offers_view.dart';
 import 'package:booktickets/Search/views/header_view.dart';
 import 'package:booktickets/Search/views/search_form_view.dart';
-import 'package:booktickets/Utils/app_layout.dart';
 import 'package:booktickets/Utils/app_styles.dart';
 import 'package:booktickets/Utils/size_config.dart';
 import 'package:flutter/material.dart';
