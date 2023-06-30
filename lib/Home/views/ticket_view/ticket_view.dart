@@ -26,11 +26,11 @@ class TicketView extends StatelessWidget {
       // height: SizeConfig.blockSizeVertical! * 30,
 
       child: Container(
-        decoration: const BoxDecoration(color: Colors.teal),
+        // decoration: const BoxDecoration(color: Colors.teal),
         margin: EdgeInsets.only(right: SizeConfig.safeBlockHorizontal! * 5),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max,
           children: [
             /** 
              * Showing the card header view 

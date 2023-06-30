@@ -20,6 +20,8 @@ class DiscountOffersViews extends StatelessWidget {
           Gap(SizeConfig.safeBlockHorizontal! * 5),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.max,
             children: [
               /**
                * 1st Discount Card
@@ -42,7 +44,7 @@ class DiscountOffersViews extends StatelessWidget {
                 child: Column(
                   children: [
                     Container(
-                      height: SizeConfig.blockSizeHorizontal! * 50,
+                      height: SizeConfig.blockSizeHorizontal! * 40,
                       decoration: BoxDecoration(
                           color: Colors.black,
                           borderRadius:
@@ -69,7 +71,7 @@ class DiscountOffersViews extends StatelessWidget {
                     children: [
                       Container(
                         width: SizeConfig.blockSizeHorizontal! * 44,
-                        height: SizeConfig.blockSizeVertical! * 30,
+                        // height: SizeConfig.blockSizeVertical! * 30,
                         decoration: BoxDecoration(
                             color: const Color(0xFF3AB8B8),
                             borderRadius:
@@ -116,7 +118,7 @@ class DiscountOffersViews extends StatelessWidget {
                    */
                   Container(
                     width: SizeConfig.blockSizeHorizontal! * 44,
-                    height: SizeConfig.blockSizeHorizontal! * 40,
+                    // height: SizeConfig.blockSizeHorizontal! * 40,
                     padding: EdgeInsets.symmetric(
                         vertical: SizeConfig.blockSizeVertical! * 3,
                         horizontal: SizeConfig.blockSizeHorizontal! * 3),
