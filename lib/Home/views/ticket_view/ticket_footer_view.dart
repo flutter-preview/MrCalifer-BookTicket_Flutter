@@ -21,6 +21,7 @@ class TicketFooterView extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: isColor == null ? Styles.orangeColor : Colors.white,
+        border: Border.all(width: 0, color : isColor == null ? Styles.orangeColor : Colors.white),
         borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(
                 isColor == null ? SizeConfig.safeBlockHorizontal! * 5 : 0),

@@ -26,6 +26,9 @@ class TicketHeaderView extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: isColor == null ? const Color(0xFF526799) : Colors.white,
+        border: Border.all(
+            width: 0,
+            color: isColor == null ? const Color(0xFF526799) : Colors.white),
         borderRadius: BorderRadius.only(
             topLeft: Radius.circular(SizeConfig.safeBlockHorizontal! * 5),
             topRight: Radius.circular(SizeConfig.safeBlockHorizontal! * 5)),

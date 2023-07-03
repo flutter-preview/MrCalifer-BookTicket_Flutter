@@ -1,6 +1,5 @@
 import 'package:booktickets/Home/views/ticket_view/ticket_view.dart';
 import 'package:booktickets/Utils/app_info_list.dart';
-import 'package:booktickets/Utils/app_layout.dart';
 import 'package:booktickets/Utils/app_styles.dart';
 import 'package:booktickets/Utils/size_config.dart';
 import 'package:booktickets/widgets/column_layout.dart';
