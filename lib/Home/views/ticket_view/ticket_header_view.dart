@@ -48,26 +48,28 @@ class TicketHeaderView extends StatelessWidget {
               Expanded(
                   child: Stack(
                 children: [
-                  SizedBox(
-                    height: SizeConfig.safeBlockVertical! * 3.8,
-                    child: LayoutBuilder(
-                      builder: ((context, constraints) {
-                        return Flex(
-                            direction: Axis.horizontal,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            mainAxisSize: MainAxisSize.max,
-                            children: List.generate(
-                                (constraints.constrainWidth() / 8).floor(),
-                                (index) => SizedBox(
-                                      width: 3,
-                                      height: 1,
-                                      child: DecoratedBox(
-                                          decoration: BoxDecoration(
-                                              color: isColor == null
-                                                  ? Colors.white
-                                                  : Colors.grey.shade300)),
-                                    )));
-                      }),
+                  Positioned.fill(
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: LayoutBuilder(
+                        builder: ((context, constraints) {
+                          return Flex(
+                              direction: Axis.horizontal,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisSize: MainAxisSize.max,
+                              children: List.generate(
+                                  (constraints.constrainWidth() / 8).floor(),
+                                  (index) => SizedBox(
+                                        width: 3,
+                                        height: 1,
+                                        child: DecoratedBox(
+                                            decoration: BoxDecoration(
+                                                color: isColor == null
+                                                    ? Colors.white
+                                                    : Colors.grey.shade300)),
+                                      )));
+                        }),
+                      ),
                     ),
                   ),
                   Center(

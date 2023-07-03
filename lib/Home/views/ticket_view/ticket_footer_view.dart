@@ -1,17 +1,17 @@
 import 'package:booktickets/Utils/app_styles.dart';
 import 'package:booktickets/Utils/size_config.dart';
+import 'package:booktickets/widgets/column_layout.dart';
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 
 class TicketFooterView extends StatelessWidget {
   final String date;
-  final String dedepartureTime;
+  final String departureTime;
   final int number;
   final bool? isColor;
   const TicketFooterView(
       {Key? key,
       required this.date,
-      required this.dedepartureTime,
+      required this.departureTime,
       required this.number,
       this.isColor})
       : super(key: key);
@@ -36,60 +36,24 @@ class TicketFooterView extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    date,
-                    style: isColor == null
-                        ? Styles.headLineStyle3.copyWith(color: Colors.white)
-                        : Styles.headLineStyle3,
-                  ),
-                  Gap(SizeConfig.safeBlockVertical! * 1),
-                  Text(
-                    "Date",
-                    style: isColor == null
-                        ? Styles.headLineStyle4.copyWith(color: Colors.white)
-                        : Styles.headLineStyle4,
-                  )
-                ],
+              ColumnLayout(
+                firstText: date,
+                secondText: "Date",
+                alignment: CrossAxisAlignment.start,
+                isColor: isColor,
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Text(
-                    dedepartureTime,
-                    style: isColor == null
-                        ? Styles.headLineStyle3.copyWith(color: Colors.white)
-                        : Styles.headLineStyle3,
-                  ),
-                  Gap(SizeConfig.safeBlockVertical! * 1),
-                  Text(
-                    "Departure Time",
-                    style: isColor == null
-                        ? Styles.headLineStyle4.copyWith(color: Colors.white)
-                        : Styles.headLineStyle4,
-                  )
-                ],
+              ColumnLayout(
+                firstText: departureTime,
+                secondText: "Departure Time",
+                alignment: CrossAxisAlignment.center,
+                isColor: isColor,
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Text(
-                    "$number",
-                    style: isColor == null
-                        ? Styles.headLineStyle3.copyWith(color: Colors.white)
-                        : Styles.headLineStyle3,
-                  ),
-                  Gap(SizeConfig.safeBlockVertical! * 1),
-                  Text(
-                    "Number",
-                    style: isColor == null
-                        ? Styles.headLineStyle4.copyWith(color: Colors.white)
-                        : Styles.headLineStyle4,
-                  )
-                ],
-              )
+              ColumnLayout(
+                firstText: "$number",
+                secondText: "Number",
+                alignment: CrossAxisAlignment.end,
+                isColor: isColor,
+              ),
             ],
           )
         ],

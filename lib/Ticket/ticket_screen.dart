@@ -3,6 +3,7 @@ import 'package:booktickets/Utils/app_info_list.dart';
 import 'package:booktickets/Utils/app_layout.dart';
 import 'package:booktickets/Utils/app_styles.dart';
 import 'package:booktickets/Utils/size_config.dart';
+import 'package:booktickets/widgets/column_layout.dart';
 import 'package:booktickets/widgets/ticket_tabs.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -41,24 +42,24 @@ class TicketScreen extends StatelessWidget {
                       Container(
                         margin: EdgeInsets.only(
                             right: SizeConfig.safeBlockHorizontal! * 5),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: SizeConfig.safeBlockHorizontal! * 3),
                         color: Colors.white,
-                        child: Column(
+                        child: const Column(
                           children: [
                             Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Column(
-                                  children: [
-                                    Text(
-                                      "Califer",
-                                      style: Styles.headLineStyle3,
-                                    ),
-                                    Gap(AppLayout.getHeight(5)),
-                                    Text(
-                                      "Passenger",
-                                      style: Styles.headLineStyle3,
-                                    ),
-                                  ],
-                                )
+                                ColumnLayout(
+                                    firstText: "Califer",
+                                    secondText: "Passenger",
+                                    alignment: CrossAxisAlignment.start,
+                                    isColor: true,),
+                                ColumnLayout(
+                                    firstText: "52221 364869",
+                                    secondText: "Passport",
+                                    alignment: CrossAxisAlignment.end,
+                                    isColor: true,),
                               ],
                             )
                           ],

@@ -54,7 +54,7 @@ class TicketView extends StatelessWidget {
              */
             TicketFooterView(
               date: date,
-              dedepartureTime: departureTime,
+              departureTime: departureTime,
               number: number,
               isColor: isColor,
             ),
