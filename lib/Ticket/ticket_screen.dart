@@ -7,6 +7,7 @@ import 'package:booktickets/widgets/layout_builder.dart';
 import 'package:booktickets/widgets/ticket_tabs.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:barcode_widget/barcode_widget.dart';
 
 class TicketScreen extends StatelessWidget {
   const TicketScreen({super.key});
@@ -121,7 +122,7 @@ class TicketScreen extends StatelessWidget {
                                   ],
                                 ),
                                 const ColumnLayout(
-                                  firstText: "Rs.8659",
+                                  firstText: "Rs.126213",
                                   secondText: "Price",
                                   alignment: CrossAxisAlignment.end,
                                   isColor: true,
@@ -131,10 +132,80 @@ class TicketScreen extends StatelessWidget {
                           ],
                         ),
                       ),
+                      /**
+                       * Bar Code
+                       */
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(width: 0, color: Colors.white),
+                          borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(
+                                  SizeConfig.safeBlockHorizontal! * 5),
+                              bottomRight: Radius.circular(
+                                  SizeConfig.safeBlockHorizontal! * 5)),
+                        ),
+                        margin: EdgeInsets.only(
+                            right: SizeConfig.safeBlockHorizontal! * 5, top: 1),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: SizeConfig.safeBlockHorizontal! * 3,
+                            vertical: SizeConfig.safeBlockHorizontal! * 3),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(
+                              SizeConfig.blockSizeVertical! * 2),
+                          child: BarcodeWidget(
+                            barcode: Barcode.code128(),
+                            data: 'https://www.github.com/MrCalifer',
+                            drawText: false,
+                            color: Styles.textColor,
+                            width: SizeConfig.blockSizeVertical! * 90,
+                            height: SizeConfig.blockSizeVertical! * 10,
+                          ),
+                        ),
+                      ),
+                      Gap(SizeConfig.safeBlockHorizontal! * 5),
+                      /**
+                       * Ticket view
+                       */
+                      TicketView(
+                        ticket: ticketList[0],
+                      )
                     ],
                   )),
             ],
           ),
+
+          /**
+           * 2nd child in the stack
+           */
+          Positioned(
+            left: SizeConfig.blockSizeHorizontal! * 8,
+            top: SizeConfig.blockSizeVertical! *50,
+            child: Container(
+              padding: const EdgeInsets.all(3),
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(color: Styles.textColor, width: 2)),
+                  child: CircleAvatar(
+                    maxRadius: 4,
+                    backgroundColor: Styles.textColor,
+                  ),
+            ),
+          ),
+          Positioned(
+            right: SizeConfig.blockSizeHorizontal! * 8,
+            top: SizeConfig.blockSizeVertical! *50,
+            child: Container(
+              padding: const EdgeInsets.all(3),
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(color: Styles.textColor, width: 2)),
+                  child: CircleAvatar(
+                    maxRadius: 4,
+                    backgroundColor: Styles.textColor,
+                  ),
+            ),
+          )
         ],
       ),
     );
