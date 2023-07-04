@@ -27,7 +27,7 @@ class ColumnLayout extends StatelessWidget {
                         ? Styles.headLineStyle3.copyWith(color: Colors.white)
                         : Styles.headLineStyle3,
         ),
-        Gap(SizeConfig.blockSizeVertical! * 1),
+        Gap(SizeConfig.blockSizeVertical! * 0.25),
         Text(
           secondText,
           style: isColor == null

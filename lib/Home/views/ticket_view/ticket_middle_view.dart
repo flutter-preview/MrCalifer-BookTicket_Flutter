@@ -1,5 +1,6 @@
 import 'package:booktickets/Utils/app_styles.dart';
 import 'package:booktickets/Utils/size_config.dart';
+import 'package:booktickets/widgets/layout_builder.dart';
 import 'package:flutter/material.dart';
 
 class TicketMiddleView extends StatelessWidget {
@@ -30,26 +31,7 @@ class TicketMiddleView extends StatelessWidget {
           Expanded(
               child: Padding(
             padding: EdgeInsets.all(SizeConfig.safeBlockVertical! * 1.5),
-            child: LayoutBuilder(
-              builder: ((context, constraints) {
-                return Flex(
-                  direction: Axis.horizontal,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  mainAxisSize: MainAxisSize.max,
-                  children: List.generate(
-                      (constraints.constrainWidth() / 15).floor(),
-                      (index) => SizedBox(
-                            width: 3,
-                            height: 1,
-                            child: DecoratedBox(
-                                decoration: BoxDecoration(
-                                    color: isColor == null
-                                        ? Colors.white
-                                        : Colors.grey.shade300)),
-                          )),
-                );
-              }),
-            ),
+            child: LayoutBuilderWidget(isColor: isColor , sections: 15,),
           )),
           SizedBox(
             height: SizeConfig.safeBlockVertical! * 2,

@@ -3,6 +3,7 @@ import 'package:booktickets/Utils/app_info_list.dart';
 import 'package:booktickets/Utils/app_styles.dart';
 import 'package:booktickets/Utils/size_config.dart';
 import 'package:booktickets/widgets/column_layout.dart';
+import 'package:booktickets/widgets/layout_builder.dart';
 import 'package:booktickets/widgets/ticket_tabs.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -40,30 +41,96 @@ class TicketScreen extends StatelessWidget {
                       ),
                       Container(
                         margin: EdgeInsets.only(
-                            right: SizeConfig.safeBlockHorizontal! * 5),
+                            right: SizeConfig.safeBlockHorizontal! * 5, top: 1),
                         padding: EdgeInsets.symmetric(
-                            horizontal: SizeConfig.safeBlockHorizontal! * 3),
+                            horizontal: SizeConfig.safeBlockHorizontal! * 3,
+                            vertical: SizeConfig.safeBlockHorizontal! * 2),
                         color: Colors.white,
-                        child: const Column(
+                        child: Column(
                           children: [
-                            Row(
+                            const Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 ColumnLayout(
-                                    firstText: "Califer",
-                                    secondText: "Passenger",
-                                    alignment: CrossAxisAlignment.start,
-                                    isColor: true,),
+                                  firstText: "Califer",
+                                  secondText: "Passenger",
+                                  alignment: CrossAxisAlignment.start,
+                                  isColor: true,
+                                ),
                                 ColumnLayout(
-                                    firstText: "52221 364869",
-                                    secondText: "Passport",
-                                    alignment: CrossAxisAlignment.end,
-                                    isColor: true,),
+                                  firstText: "52221 364869",
+                                  secondText: "Passport",
+                                  alignment: CrossAxisAlignment.end,
+                                  isColor: true,
+                                ),
                               ],
-                            )
+                            ),
+                            Gap(SizeConfig.safeBlockHorizontal! * 3),
+                            const LayoutBuilderWidget(
+                              sections: 15,
+                              isColor: true,
+                              width: 5,
+                            ),
+                            Gap(SizeConfig.safeBlockHorizontal! * 3),
+                            const Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                ColumnLayout(
+                                  firstText: "364738 282744",
+                                  secondText: "Number of E-ticket",
+                                  alignment: CrossAxisAlignment.start,
+                                  isColor: true,
+                                ),
+                                ColumnLayout(
+                                  firstText: "B2SG28",
+                                  secondText: "Booking code",
+                                  alignment: CrossAxisAlignment.end,
+                                  isColor: true,
+                                ),
+                              ],
+                            ),
+                            Gap(SizeConfig.safeBlockHorizontal! * 3),
+                            const LayoutBuilderWidget(
+                              sections: 15,
+                              isColor: true,
+                              width: 5,
+                            ),
+                            Gap(SizeConfig.safeBlockHorizontal! * 3),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Image.asset(
+                                          "assest/images/visa.png",
+                                          scale: 11,
+                                        ),
+                                        Text(
+                                          "  *** 2463",
+                                          style: Styles.headLineStyle3,
+                                        )
+                                      ],
+                                    ),
+                                    Gap(SizeConfig.safeBlockHorizontal! * 1),
+                                    Text(
+                                      "Payment Method",
+                                      style: Styles.headLineStyle4,
+                                    )
+                                  ],
+                                ),
+                                const ColumnLayout(
+                                  firstText: "Rs.8659",
+                                  secondText: "Price",
+                                  alignment: CrossAxisAlignment.end,
+                                  isColor: true,
+                                ),
+                              ],
+                            ),
                           ],
                         ),
-                      )
+                      ),
                     ],
                   )),
             ],

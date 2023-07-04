@@ -1,5 +1,6 @@
 import 'package:booktickets/Utils/app_styles.dart';
 import 'package:booktickets/Utils/size_config.dart';
+import 'package:booktickets/widgets/layout_builder.dart';
 import 'package:booktickets/widgets/thick_container.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -54,25 +55,7 @@ class TicketHeaderView extends StatelessWidget {
                   Positioned.fill(
                     child: Align(
                       alignment: Alignment.center,
-                      child: LayoutBuilder(
-                        builder: ((context, constraints) {
-                          return Flex(
-                              direction: Axis.horizontal,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              mainAxisSize: MainAxisSize.max,
-                              children: List.generate(
-                                  (constraints.constrainWidth() / 8).floor(),
-                                  (index) => SizedBox(
-                                        width: 3,
-                                        height: 1,
-                                        child: DecoratedBox(
-                                            decoration: BoxDecoration(
-                                                color: isColor == null
-                                                    ? Colors.white
-                                                    : Colors.grey.shade300)),
-                                      )));
-                        }),
-                      ),
+                      child: LayoutBuilderWidget(sections: 8 , isColor: isColor,),
                     ),
                   ),
                   Center(
